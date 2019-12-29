@@ -38,14 +38,14 @@ public class BaseTest {
 	 public static void intialization() throws IOException {
 		 String browsername=prop.getProperty("browser");
 		 if(browsername.equals("chrome")) {
-			 System.setProperty("WebDriver.chrome.driver", "D:\\ram\\Myproject\\Drivers\\chromedriver.exe");
+			 System.setProperty("webdriver.chrome.driver","D:\\ram\\Myproject\\Drivers\\chromedriver.exe");
 			 driver=new ChromeDriver();
 		 }else  if(browsername.equals("ff")) {
-			 System.setProperty("WebDriver.gecko.driver", "D:\\ram\\Myproject\\Drivers\\geckodriver.exe");
+			 System.setProperty("Webdriver.gecko.driver", "D:\\ram\\Myproject\\Drivers\\geckodriver.exe");
 			 driver=new FirefoxDriver();
 		 }
 		 else  if(browsername.equals("IE")) {
-			 System.setProperty("WebDriver.IE.driver", "D:\\ram\\Myproject\\Drivers\\IEDriver.exe");
+			 System.setProperty("Webdriver.IE.driver", "D:\\ram\\Myproject\\Drivers\\IEDriver.exe");
 			 driver=new InternetExplorerDriver();
 		 }
 			

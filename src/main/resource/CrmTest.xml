@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
   <listeners>
   <listener name="com.myprjct.qa.extentreports.ExtentReporter"/>
+  <listener class name="com.myprjct.qa.utilitys.Mytransformer"/>
   </listeners>
     <classes>
       <class name="com.myprjct.qa.testcases.LoginpageTest.java"/>
