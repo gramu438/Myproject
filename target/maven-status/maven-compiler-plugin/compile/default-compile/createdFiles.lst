@@ -1,0 +1,11 @@
+com\myprjct\qa\extentreports\ExtentReporter.class
+com\myprjct\qa\pages\Dealspage.class
+com\myprjct\qa\pages\Contactspage.class
+com\myprjct\qa\utilitys\Mytransformer.class
+com\myprjct\qa\testdata\Xls_Reader.class
+com\myprjct\qa\pages\Homepage.class
+com\myprjct\qa\pages\Loginpage.class
+com\myprjct\qa\base\BaseTest.class
+com\myprjct\qa\utilitys\RetryAnalyzer.class
+com\myprjct\qa\utilitys\WebEventListener.class
+com\myprjct\qa\utilitys\TestUtils.class

@@ -3,6 +3,7 @@ package com.myprjct.qa.testcases;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -57,12 +58,16 @@ public class ContactpageTest extends BaseTest {
 		Object[][]data = testUtils.getTestData(sheetname);
 		return data;
 	}
-	@Test(priority=4)
-	public void validateCreateNewContact(String title,String ftName,String ltName,String position) {
+	@Test(priority=4,dataProvider="getCrmTestData")
+	public void validateCreateNewContact(String title,String firstName,String lastName,String positions) {
 		homepage.clickonNewContactLink();
-		contactspage.createNewContact(title, ftName, ltName, position);
+		contactspage.createNewContact(title, firstName, lastName, positions);
 
 }
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
 	
 }	
 	

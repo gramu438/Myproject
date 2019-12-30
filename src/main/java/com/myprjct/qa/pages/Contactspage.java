@@ -13,15 +13,15 @@ import com.myprjct.qa.base.BaseTest;
 public class Contactspage extends BaseTest {
 	
 
-	@FindBy(xpath="//td[contains(text(),'Contacts')]")
+	@FindBy(xpath="//*[@id=\"navmenu\"]/ul/li[4]/a")
 	WebElement contactlable;
-	@FindBy(name="title")
+	@FindBy(xpath="//*[@id='contactForm']//tbody[1]/tr[2]//td//tr[1]/td[2]/select")
 	WebElement title;
-	@FindBy(id="first_name")
-	WebElement first_name;
-	@FindBy(id="surname")
-	WebElement last_name;
-	@FindBy(id="company_position")
+	@FindBy(xpath="//*[@id='first_name']")
+	WebElement firstName;
+	@FindBy(xpath="//*[@id='surname']")
+	WebElement lastName;
+	@FindBy(xpath="//*[@id='company_position']")
 	WebElement positions;
 	@FindBy(xpath="//*[@id='contactForm']//table//td/input[@type='submit'][1]")
 	WebElement savebtn;
@@ -41,8 +41,9 @@ public class Contactspage extends BaseTest {
 	}
 	public void createNewContact(String title,String ftName,String ltName,String position) {
 		Select select=new Select(driver.findElement(By.name(title)));
-		first_name.sendKeys(ftName);
-		last_name.sendKeys(ltName);
+		select.selectByVisibleText(title);
+		firstName.sendKeys(ftName);
+		lastName.sendKeys(ltName);
 		positions.sendKeys(position);
 		savebtn.click();
 	}

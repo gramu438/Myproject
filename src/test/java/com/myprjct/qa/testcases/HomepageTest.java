@@ -3,6 +3,7 @@ package com.myprjct.qa.testcases;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -44,7 +45,7 @@ public class HomepageTest extends BaseTest {
 		Assert.assertTrue(homepage.verifyCorrectUsername());
 		
 	}
-	@Test(priority=3)
+	@Test(priority=2)
 	public void verifyContactLinkTest() throws IOException {
 		testUtils.switchtoframe();
 		contactspage=homepage.clickOnContactLink();
@@ -53,6 +54,10 @@ public class HomepageTest extends BaseTest {
 	public void verifyDealsLinkTest() {
 		testUtils.switchtoframe();
 		 dealspage = homepage.clickOnDealsLink();
+	}
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
 	}
 	
 

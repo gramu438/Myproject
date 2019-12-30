@@ -4,6 +4,7 @@ package com.myprjct.qa.pages;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -39,6 +40,9 @@ public class Loginpage extends BaseTest {
 	public Homepage login(String un,String pswrd) throws IOException  {
 		username.sendKeys(un);
 		password.sendKeys(pswrd);
+		//loginbtn.click();
+    	JavascriptExecutor js = (JavascriptExecutor)driver;
+    	js.executeScript("arguments[0].click();", loginbtn);
 		return new Homepage();
 	}
 	

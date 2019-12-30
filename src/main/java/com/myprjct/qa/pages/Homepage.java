@@ -12,12 +12,12 @@ import com.myprjct.qa.base.BaseTest;
 public class Homepage extends BaseTest {
 	@FindBy(xpath="//td[contains(text(),'User: ram g')]")
 	WebElement usernamelable;
-	@FindBy(xpath="//td[contains(text(),'Contacts')]")
+	@FindBy(xpath="//*[@id=\"navmenu\"]/ul/li[4]/a")
 	WebElement contactLink;
-	@FindBy(xpath="//td[contains(text(),'New Contact')]")
+	@FindBy(xpath="//*[@id=\"navmenu\"]/ul/li[4]/ul/li[1]/a")
 	WebElement newcontactLink;
 	
-	@FindBy(xpath="//td[contains(text(),'Deals')]")
+	@FindBy(xpath="//*[@id=\"navmenu\"]/ul/li[5]/a")
 	WebElement dealsLink;
 	
 	public Homepage()throws IOException {
